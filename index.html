@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MOONCRUST 3D — Official Interactive AI Logo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Canvas 3D Three.js -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Overlay UI Glassmorphism (Mooncrust HUD) -->
+  <div class="hud-overlay" id="hudOverlay">
+    <header class="hud-header">
+      <div class="brand">
+        <span class="brand-badge">MOONCRUST AI • 3D EMBLEM</span>
+        <h1 class="brand-title">MOONCRUST</h1>
+        <p class="brand-subtitle">Logo 3D Interaktif • Karya Bagaskara Amukti Palapa (BagaskaraAP-Dev)</p>
+      </div>
+      <div class="header-actions">
+        <div class="fps-pill" id="fpsCounter">60 FPS</div>
+        <!-- Tombol Buka Panel jika sedang tertutup -->
+        <button class="btn-toggle-hud" id="openPanelBtn" title="Buka Panel Pengaturan">
+          ⚙️ Panel Kontrol
+        </button>
+      </div>
+    </header>
+
+    <!-- Interactive Bottom Controls Panel -->
+    <footer class="hud-footer" id="hudFooter">
+      <div class="controls-panel" id="controlsPanel">
+        <!-- Header Panel Kontrol dengan Tombol Tutup -->
+        <div class="panel-top-bar">
+          <span class="panel-label">KONTROL LOGO 3D</span>
+          <button class="btn-close-panel" id="closePanelBtn" title="Sembunyikan Panel">
+            ✕ Tutup Panel
+          </button>
+        </div>
+
+        <div class="control-group">
+          <label>Mode Bentuk Logo</label>
+          <div class="btn-grid">
+            <button class="btn-ctrl active" data-mode="crescent">Bulan Sabit (Crescent)</button>
+            <button class="btn-ctrl" data-mode="full-moon">Bulan Penuh (Sphere)</button>
+            <button class="btn-ctrl" data-mode="eclipse">Gerhana Orbit (Eclipse)</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>Aura Warna (Energy Vibe)</label>
+          <div class="btn-grid">
+            <button class="btn-ctrl active" data-theme="lunar-cyan">Lunar Cyan</button>
+            <button class="btn-ctrl" data-theme="solar-gold">Solar Gold</button>
+            <button class="btn-ctrl" data-theme="cosmic-violet">Cosmic Violet</button>
+          </div>
+        </div>
+
+        <div class="control-group control-toggles">
+          <label>Efek Visual</label>
+          <div class="btn-grid toggles">
+            <button class="btn-toggle active" id="toggleWireframe">Wireframe AI</button>
+            <button class="btn-toggle active" id="toggleRotate">Auto Rotate</button>
+            <button class="btn-toggle active" id="toggleStardust">Debu Bulan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hud-hint">
+        <span>✨ Geser untuk melihat logo 360° • Ketuk layar untuk gelombang gravitasi bulan</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Three.js + OrbitControls (Universal Compatibility) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
